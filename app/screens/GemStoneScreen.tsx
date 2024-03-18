@@ -13,10 +13,7 @@ const GemStoneScreen = () => {
 	const { data } = useStore();
 	const gemstones = data?.gemstones[0]?.data;
 
-	console.log(gemstones);
-
 	const GemKeyValue = ({ data }: GemKeyValueProps) => {
-		console.log(data);
 		return (
 			<View>
 				{Object.keys(data).map((key, index) => {
