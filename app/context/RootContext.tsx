@@ -14,10 +14,11 @@ const RootProvider = ({ children }: PropsWithChildren) => {
 	const [data, setData] = useState<Data | {}>({});
 
 	const isDataAvailable = Object.keys(data).length > 0;
+
 	useEffect(() => {
 		fetch("https://harpreetcd.github.io/reactnative.json")
-			.then((res) => res.json())
-			.then((data) => setData(data))
+			.then((response) => response.json())
+			.then((res) => setData(res))
 			.catch((err) => console.log(err));
 	}, []);
 
